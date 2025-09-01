@@ -14,3 +14,13 @@
 // t = 2 tahun
 // r = 5% per tahun
 // Maka:
+
+void main(List<String> args) {
+  int p = 10000;
+  int t = 2;
+  double r = 5/100 ;
+
+  double simpleInterest = (p*t*r)/100;
+  print('bunga $p dalam $t tahun adalah $simpleInterest');
+
+}
