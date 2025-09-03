@@ -1,0 +1,62 @@
+Apa itu Enum?
+Enum (singkatan dari enumeration) adalah tipe data khusus yang berisi kumpulan nilai konstan.
+Enum digunakan kalau kita punya pilihan nilai yang terbatas dan sudah pasti.
+Tujuannya untuk membuat kode lebih rapi, aman, dan mudah dibaca.
+
+Apa itu Enum Class (Sejak Dart 2.17)
+Mulai Dart 2.17, kita bisa bikin enum class yang lebih powerful:
+Enum bisa punya property, method, dan constructor.
+Jadi mirip class biasa, tapi nilainya tetap terbatas.
+
+Kapan Pakai Enum?
+Kalau ada pilihan tetap seperti hari, arah mata angin, status pesanan, level game, dll.
+Supaya tidak salah ketik string, misalnya "pending", "Pending", dll.
+Kode lebih terstruktur dan mudah dipahami.
+
+enum StatusOrder { pending, processing, completed, cancelled }
+
+void main() {
+  StatusOrder status = StatusOrder.processing;
+
+  switch (status) {
+    case StatusOrder.pending:
+      print("Pesanan menunggu konfirmasi.");
+      break;
+    case StatusOrder.processing:
+      print("Pesanan sedang diproses.");
+      break;
+    case StatusOrder.completed:
+      print("Pesanan selesai.");
+      break;
+    case StatusOrder.cancelled:
+      print("Pesanan dibatalkan.");
+      break;
+  }
+}
+
+// Definisi enum class Gender
+enum Gender {
+  male('Male'),
+  female('Female'),
+  others('Others');
+
+  final String displayName;
+
+  const Gender(this.displayName);
+
+  void show() {
+    print(displayName);
+  }
+}
+
+void main() {
+  // Cetak semua nilai enum
+  for (var gender in Gender.values) {
+    print('Enum: $gender, Label: ${gender.displayName}');
+  }
+
+  print('\nMenggunakan method show():');
+  for (var gender in Gender.values) {
+    gender.show();
+  }
+}
