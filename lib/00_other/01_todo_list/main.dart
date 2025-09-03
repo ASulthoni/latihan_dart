@@ -1,33 +1,30 @@
 import 'dart:io';
-
+import 'pilihan.dart';
 void main(List<String> args) {
   List<Map<String, String>> agenda = [];
 
   bool ulang = false;
 
   while (!ulang) {
-    print('Silahkah pilih dengan ketik');
-    print(
-      '1. Melihat agenda 2.Menambah agenda 3.Mengedit agenda 4. Menghapus agenda',
-    );
-    int pilih = int.parse(stdin.readLineSync() ?? '0');
-
-    if (pilih == 1) {
-      print(agenda);
-    } else if (pilih == 2) {
+    
+    switch (pilih) {
+      case 1:
+        showAgenda(agenda);
+        break;
+      case 2:
       print('Masukan ID');
       String inputId = stdin.readLineSync() ?? '';
       print('Masukan tanggal');
       String inputTgl = stdin.readLineSync() ?? '';
       print('Masukan Kegiatan');
       String inputKegiatan = stdin.readLineSync() ?? '';
-
       agenda.add({
         'id': inputId,
         'tanggal': inputTgl,
         'kegiatan': inputKegiatan,
       });
-    } else if (pilih == 3) {
+      break;
+    case 3:
       print('Masukan ID');
       String inputId = stdin.readLineSync() ?? '';
       print('Masukan tanggal baru');
@@ -41,7 +38,8 @@ void main(List<String> args) {
           agenda[i]['kegiatan'] = inputKegiatan;
         }
       }
-    } else if (pilih == 4) {
+      break;
+      case 4:
       print('Masukan ID');
       String inputId = stdin.readLineSync() ?? '';
 
@@ -50,6 +48,12 @@ void main(List<String> args) {
           agenda.removeAt(i);
         }
       }
+      break;
+      default:
     }
   }
+}
+
+void showAgenda(List<Map<String, String>> agenda) {
+  print(agenda);
 }
