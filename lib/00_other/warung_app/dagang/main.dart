@@ -1,9 +1,5 @@
 import 'dart:io';
 
-// import 'package:latihan_dart/00_other/warung_app/dagang/input_dagangan.dart';
-// import 'package:latihan_dart/00_other/warung_app/dagang/lihat_dagangan.dart';
-
-
 void main(List<String> args){
   List<Map<String, String>> dagangan = [];
 print ('Selamat datang di aplikasi warung');
@@ -39,11 +35,30 @@ void lihatDagangan(dagangan) {
 }
 
 void inputDagangan(dagangan) {
-   print('input dagangan');
+   print('Masukan ID');
+   int id = int.parse(stdin.readLineSync()?? '');
+   print('Masukan nama produk');
+   String namaProduk = stdin.readLineSync()?? '';
+   print('Masukan jumlah produk');
+   int jumlahProduk = int.parse(stdin.readLineSync()?? '0');
+   dagangan.add({'id':id.toString(), 'nama': namaProduk,'jumlah':jumlahProduk.toString()}); 
+
 }
 
 void editDagangan(dagangan) {
-  print('fungsi edit dagangan');
+  print('Masukan ID');
+   int id = int.parse(stdin.readLineSync()?? '');
+  //  print('Masukan nama produk baru');
+  //  String namaProduk = stdin.readLineSync()?? '';
+   print('Masukan jumlah produk');
+   int jumlahProduk = int.parse(stdin.readLineSync()?? '0');
+  //  int jumlah = jumlahProduk + jumlahProduk;
+   for (var i = 0; i < dagangan.length; i++) {
+     if (dagangan[i]['id'] == id){
+      // dagangan[i]['nama'] = namaProduk;
+      dagangan[i]['jumlah'] = jumlahProduk.toString();
+     }
+   }
 }
 
 void hapusDagangan(dagangan) {
