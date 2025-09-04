@@ -11,45 +11,62 @@ void main(List<String> args) {
       '1. Melihat agenda 2.Menambah agenda 3.Mengedit agenda 4. Menghapus agenda',
     );
     int pilih = int.parse(stdin.readLineSync() ?? '0');
+    switch (pilih) {
+      case 1:
+        tampilkanAgenda(agenda);
+        break;
+      case 2:
+        tambahAgenda(agenda);
+        break;
+      case 3:
+        editAgenda(agenda);
+        break;
+      case 4:
+        hapusAgenda(agenda);
+        break;
+      default:
+    }
+  }
+}
 
-    if (pilih == 1) {
-      print(agenda);
-    } else if (pilih == 2) {
-      print('Masukan ID');
-      String inputId = stdin.readLineSync() ?? '';
-      print('Masukan tanggal');
-      String inputTgl = stdin.readLineSync() ?? '';
-      print('Masukan Kegiatan');
-      String inputKegiatan = stdin.readLineSync() ?? '';
+void tampilkanAgenda(agenda) {
+  print(agenda);
+}
 
-      agenda.add({
-        'id': inputId,
-        'tanggal': inputTgl,
-        'kegiatan': inputKegiatan,
-      });
-    } else if (pilih == 3) {
-      print('Masukan ID');
-      String inputId = stdin.readLineSync() ?? '';
-      print('Masukan tanggal baru');
-      String inputTgl = stdin.readLineSync() ?? '';
-      print('Masukan Kegiatan baru');
-      String inputKegiatan = stdin.readLineSync() ?? '';
+void tambahAgenda(agenda) {
+  print('Masukan ID');
+  String inputId = stdin.readLineSync() ?? '';
+  print('Masukan tanggal');
+  String inputTgl = stdin.readLineSync() ?? '';
+  print('Masukan Kegiatan');
+  String inputKegiatan = stdin.readLineSync() ?? '';
 
-      for (var i = 0; i < agenda.length; i++) {
-        if (agenda[i]['id'] == inputId) {
-          agenda[i]['tanggal'] = inputTgl;
-          agenda[i]['kegiatan'] = inputKegiatan;
-        }
-      }
-    } else if (pilih == 4) {
-      print('Masukan ID');
-      String inputId = stdin.readLineSync() ?? '';
+  agenda.add({'id': inputId, 'tanggal': inputTgl, 'kegiatan': inputKegiatan});
+}
 
-      for (var i = 0; i < agenda.length; i++) {
-        if (agenda[i]['id'] == inputId) {
-          agenda.removeAt(i);
-        }
-      }
+void editAgenda(agenda) {
+  print('Masukan ID');
+  String inputId = stdin.readLineSync() ?? '';
+  print('Masukan tanggal baru');
+  String inputTgl = stdin.readLineSync() ?? '';
+  print('Masukan Kegiatan baru');
+  String inputKegiatan = stdin.readLineSync() ?? '';
+
+  for (var i = 0; i < agenda.length; i++) {
+    if (agenda[i]['id'] == inputId) {
+      agenda[i]['tanggal'] = inputTgl;
+      agenda[i]['kegiatan'] = inputKegiatan;
+    }
+  }
+}
+
+void hapusAgenda(agenda) {
+  print('Masukan ID');
+  String inputId = stdin.readLineSync() ?? '';
+
+  for (var i = 0; i < agenda.length; i++) {
+    if (agenda[i]['id'] == inputId) {
+      agenda.removeAt(i);
     }
   }
 }

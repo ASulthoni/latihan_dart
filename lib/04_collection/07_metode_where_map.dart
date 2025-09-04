@@ -14,16 +14,16 @@ void main(List<String> args) {
   //     .toList();
   // print(nama);
 
-  // List<Map<String, String>> nama = daftarKontak
-  //     .where((kontak) => kontak['name']!.length == 5)
-  //     .toList();
+  List<Map<String, String>> nama = daftarKontak
+      .where((kontak) => kontak['name']!.length == 4)
+      .toList();
 
-  // print(nama);
+  print(nama);
 
-  List<Map<String, String>> daftarSiswa = [];
+  // List<Map<String, String>> daftarSiswa = [];
 
-  daftarSiswa.add({'id Siswa': '01', 'nama': 'Saroh', 'NISN': '98847'});
-  daftarSiswa.add({'id Siswa': '02', 'nama': 'Husna', 'NISN': '90887'});
+  // daftarSiswa.add({'id Siswa': '01', 'nama': 'Saroh', 'NISN': '98847'});
+  // daftarSiswa.add({'id Siswa': '02', 'nama': 'Husna', 'NISN': '90887'});
 
-  print(daftarSiswa);
+  // print(daftarSiswa);
 }
