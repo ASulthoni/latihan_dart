@@ -1,4 +1,4 @@
-import 'package:latihan_dart/05_oop_dart/06_bottle/coke_bottle.dart';
+import 'package:latihan_dart/06_oop_dart/06_bottle/coke_bottle.dart';
 
 class Bottle {
   void open() {
