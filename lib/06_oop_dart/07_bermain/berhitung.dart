@@ -1,12 +1,13 @@
 import 'dart:math';
 import 'dart:io';
 
+
+
 class Berhitung {
+  final Random random = Random();
   
   int penambahan(int point) {
     print('Silahkan tebak hasil penambahan berikut');
-
-    var random = Random();
     int angka1 = random.nextInt(100);
     int angka2 = random.nextInt(100);
     int hasil = angka1 + angka2;
@@ -23,9 +24,6 @@ class Berhitung {
   }
 
   int pengurangan(int point) {
-    print('Silahkan tebak hasil penambahan berikut');
-
-    var random = Random();
     int angka1 = random.nextInt(100);
     int angka2 = random.nextInt(100);
     int hasil = angka1 - angka2;
@@ -42,11 +40,8 @@ class Berhitung {
   }
 
   int perkalian(int point) {
-    print('Silahkan tebak hasil penambahan berikut');
-
-    var random = Random();
-    int angka1 = random.nextInt(100);
-    int angka2 = random.nextInt(100);
+    int angka1 = random.nextInt(20);
+    int angka2 = random.nextInt(20);
     int hasil = angka1 * angka2;
     print('Berapa hasil dari $angka1 X $angka2 ?');
     print('Ketikan jawabanmu di bawah ini');
@@ -61,13 +56,10 @@ class Berhitung {
   }
 
   int pembagian(int point) {
-    print('Silahkan tebak hasil penambahan berikut');
-
-    var random = Random();
     int angka1 = random.nextInt(100);
-    int angka2 = random.nextInt(100);
-    int hasil = (angka1 / angka2).toInt();
-    print('Berapa hasil dari $angka1 / $angka2 ?');
+    int angka2 = random.nextInt(10);
+    int hasil = angka1 ~/ angka2;
+    print('Berapa hasil dari $angka1 ~/ $angka2 ?');
     print('Ketikan jawabanmu di bawah ini');
     int jawaban = int.parse(stdin.readLineSync() ?? '0');
     if (jawaban == hasil) {
