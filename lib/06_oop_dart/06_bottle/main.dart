@@ -1,4 +1,4 @@
-import 'package:latihan_dart/06_oop_dart/06_bottle/bottle.dart';
+import 'bottle.dart';
 
 void main(List<String> args) {
   Bottle mybotle = Bottle();

@@ -1,26 +1,33 @@
-void main(){
-  late String address;
+void main() {
+  // late String address;
+  // print(address);
+  // address = 'AS(US)';
+  // print(address);
 
-  address = 'AS(US)';
+  // Person person = Person();
 
-  print (address);
+  // person.age = 23;
+  // person.name = 'Sutrisno';
 
-  Person person = Person();
+  // print(
+  //   'Nama dia adalah ${person.name} umurnya ${person.age} alamatnya di $address',
+  // );
 
-  person.age = 23;
-  person.name = 'Sutrisno';
-
-  print('Nama dia adalah ${person.name} umurnya ${person.age} alamatnya di $address');
-
-  // Person person1 = Person('Joko', 27);
+  Person person1 = Person();
   // Person person2 = Person('Bagio', 32);
   // Person person3 = Person('Jhoni', 30);
+  person1.name = 'joko';
+  person1.age = 30;
+  person1.cetakNama();
 }
 
 class Person {
-  String name = '';
-  int age = 0;
+  late String name;
+  late int age;
 
   // Person(this.name, this.age);
-  
+
+  void cetakNama() {
+    print(name);
+  }
 }
