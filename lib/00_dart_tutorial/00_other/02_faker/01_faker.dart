@@ -1,8 +1,13 @@
-library faker.example;
-
 import 'package:faker/faker.dart';
 
 void main() {
+  // int umur = 999_999_999_999_999_999;
+  double uang = 999_999_999_999_999;
+  String name;
+
+  nama.;
+  name.;
+
   // final random = RandomGenerator(seed: 63833423);
   // final faker = Faker.withGenerator(random);
 
