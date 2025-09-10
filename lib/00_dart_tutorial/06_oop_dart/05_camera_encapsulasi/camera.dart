@@ -6,6 +6,8 @@ class Camera {
   String _color = '';
   int _price = 0;
 
+  Camera(this._brand, this._color, this._id, this._price);
+
   // menggunakan getter setter
   void setId(String value) {
     _id = value;
